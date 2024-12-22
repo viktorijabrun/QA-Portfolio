@@ -11,7 +11,7 @@ Installation and Setup
 
 1. Clone the repository:
    https://github.com/viktorijabrun/QA-Portfolio.git
-2. Navigate to correct folder trough terminal:
+2. Navigate to correct folder through terminal:
    cd .\react-app-test\
 3. Install dependencies:
    npm install
