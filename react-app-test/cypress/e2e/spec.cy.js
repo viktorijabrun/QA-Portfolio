@@ -35,8 +35,10 @@ describe("Tic Tac Toe app", () => {
         "Next Turn: X (You)"
       ).should("be.visible");
     });
+  });
 
-    it("Player O turn", () => {
+  describe("Player O turn", () => {
+    it("Verify the AI takes its turn after the player", () => {
       // Make a move
       cy.get("[data-testid='cell-0']").click();
       //Status message is correct:"Next Turn: O (AI)".
@@ -46,65 +48,65 @@ describe("Tic Tac Toe app", () => {
     });
   });
 
-  // describe("Wining and Tie conditions", () => {
-  //   it("The games ends in victory", () => {
-  //     cy.get("[data-testid='cell-4']").click(); //Player X makes a move
-  //     //Player O (AI) makes a move
-  //     cy.wait(500);
-  //     //Player X makes a move
-  //     cy.get("[data-testid='cell-2']").click();
-  //     //Player O (AI) makes a move
-  //     cy.wait(500);
-  //     //Player X makes a move
-  //     cy.get("[data-testid='cell-1']").click();
+  describe("Wining and Tie conditions", () => {
+    it("The games ends in victory", () => {
+      cy.get("[data-testid='cell-4']").click(); //Player X makes a move
+      //Player O (AI) makes a move
+      cy.wait(500);
+      //Player X makes a move
+      cy.get("[data-testid='cell-2']").click();
+      //Player O (AI) makes a move
+      cy.wait(500);
+      //Player X makes a move
+      cy.get("[data-testid='cell-1']").click();
 
-  //     //Verify that status message contains "Winner: "
-  //     cy.contains("[data-testid='status-message']", "Winner: O").should(
-  //       "be.visible"
-  //     );
-  //   });
+      //Verify that status message contains "Winner: "
+      cy.contains("[data-testid='status-message']", "Winner: O").should(
+        "be.visible"
+      );
+    });
 
-  //   it("The game ends in a draw.", () => {
-  //     cy.get("[data-testid='cell-4']").click(); //Player X makes a move
-  //     //Player O (AI) makes a move
-  //     cy.wait(500);
-  //     //Player X makes a move
-  //     cy.get("[data-testid='cell-2']").click();
-  //     //Player O (AI) makes a move
-  //     cy.wait(500);
-  //     //Player X makes a move
-  //     cy.get("[data-testid='cell-3']").click();
-  //     //Player O (AI) makes a move
-  //     cy.wait(500);
-  //     //Player X makes a move
-  //     cy.get("[data-testid='cell-7']").click();
-  //     //Player O (AI) makes a move
-  //     cy.wait(500);
-  //     //Player X makes a move
-  //     cy.get("[data-testid='cell-8']").click();
+    it("The game ends in a draw.", () => {
+      cy.get("[data-testid='cell-4']").click(); //Player X makes a move
+      //Player O (AI) makes a move
+      cy.wait(500);
+      //Player X makes a move
+      cy.get("[data-testid='cell-2']").click();
+      //Player O (AI) makes a move
+      cy.wait(500);
+      //Player X makes a move
+      cy.get("[data-testid='cell-3']").click();
+      //Player O (AI) makes a move
+      cy.wait(500);
+      //Player X makes a move
+      cy.get("[data-testid='cell-7']").click();
+      //Player O (AI) makes a move
+      cy.wait(500);
+      //Player X makes a move
+      cy.get("[data-testid='cell-8']").click();
 
-  //     //Verify that status message "It's a Tie!" is visible
-  //     cy.contains("[data-testid='status-message']", "It's a Tie!").should(
-  //       "be.visible"
-  //     );
-  //   });
-  // });
+      //Verify that status message "It's a Tie!" is visible
+      cy.contains("[data-testid='status-message']", "It's a Tie!").should(
+        "be.visible"
+      );
+    });
+  });
 
-  // describe("Reset functionality", () => {
-  //   it("Should reset game and status message", () => {
-  //     //Make a move
-  //     cy.get("[data-testid='cell-2']").click();
-  //     //AI makes a move
-  //     cy.wait(500);
-  //     //Press "Reset Game" button
-  //     cy.get('[data-testid="reset-button"]').click();
-  //     //Verify that board squares is empty
-  //     cy.get(".cell").should("be.empty");
-  //     //Ensure that status message is visible and player X starts first
-  //     cy.contains(
-  //       "[data-testid='status-message']",
-  //       "Next Turn: X (You)"
-  //     ).should("be.visible");
-  //   });
-  // });
+  describe("Reset functionality", () => {
+    it("Should reset game and status message", () => {
+      //Make a move
+      cy.get("[data-testid='cell-2']").click();
+      //AI makes a move
+      cy.wait(500);
+      // Press "Reset Game" button
+      cy.get('[data-testid="reset-button"]').click();
+      //Verify that board squares is empty
+      cy.get(".cell").should("be.empty");
+      //Ensure that status message is visible and player X starts first
+      cy.contains(
+        "[data-testid='status-message']",
+        "Next Turn: X (You)"
+      ).should("be.visible");
+    });
+  });
 });
