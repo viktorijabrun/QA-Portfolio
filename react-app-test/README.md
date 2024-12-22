@@ -10,11 +10,14 @@ Futures:
 Installation and Setup
 
 1. Clone the repository:
-   https://github.com/viktorijabrun/QA-Portfolio/react-app-test.git
-2. Install dependencies:
+   https://github.com/viktorijabrun/QA-Portfolio.git
+2. Navigate to correct folder trough terminal:
+   cd .\react-app-test\
+3. Install dependencies:
    npm install
-3. Run the React app:
+4. Run the React app:
    npm run dev
-4. Ensure the app is running on http://localhost:5173.
-5. Open cypress
+5. Ensure the app is running on http://localhost:5173.
+6. Open second terminal, navigate to correct folder, open cypress:
+   cd .\react-app-test\
    npm run cypress-ui
